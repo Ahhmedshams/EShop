@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B9AFE984-8B4E-4BF2-BCBF-C7CA4E4B0CE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{163919A0-0C5B-4124-A397-ACB37415747D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.services.yml = docker-compose.services.yml
+		docker-compose.infrastructure.yml = docker-compose.infrastructure.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0DD4165A-E318-4FB6-A8B3-51C87E06E465}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6CBC620B-D850-42AE-8AD2-FEF330A3AF63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{6DE94B98-A8C7-4580-B447-73D39D4FD96A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{4244B8E5-9752-4CFD-85D3-45A799FE6625}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShop.User.Api", "src\Services\EShop.User.Api\EShop.User.Api.csproj", "{27E1CBE5-6D27-4C2B-BF3F-B53A7E6AC0FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShop.RiskEvaluator", "src\Services\EShop.RiskEvaluator\EShop.RiskEvaluator.csproj", "{BBB0C6D7-AD65-4301-B44F-E38510A8562F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShop.Gateway", "src\ApiGateway\EShop.Gateway\EShop.Gateway.csproj", "{E226D208-B9B6-4ACC-9AD0-2C002A1E01F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6CBC620B-D850-42AE-8AD2-FEF330A3AF63} = {B9AFE984-8B4E-4BF2-BCBF-C7CA4E4B0CE1}
+		{6DE94B98-A8C7-4580-B447-73D39D4FD96A} = {B9AFE984-8B4E-4BF2-BCBF-C7CA4E4B0CE1}
+		{4244B8E5-9752-4CFD-85D3-45A799FE6625} = {B9AFE984-8B4E-4BF2-BCBF-C7CA4E4B0CE1}
+		{27E1CBE5-6D27-4C2B-BF3F-B53A7E6AC0FE} = {6CBC620B-D850-42AE-8AD2-FEF330A3AF63}
+		{BBB0C6D7-AD65-4301-B44F-E38510A8562F} = {6CBC620B-D850-42AE-8AD2-FEF330A3AF63}
+		{E226D208-B9B6-4ACC-9AD0-2C002A1E01F2} = {4244B8E5-9752-4CFD-85D3-45A799FE6625}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27E1CBE5-6D27-4C2B-BF3F-B53A7E6AC0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E1CBE5-6D27-4C2B-BF3F-B53A7E6AC0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E1CBE5-6D27-4C2B-BF3F-B53A7E6AC0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E1CBE5-6D27-4C2B-BF3F-B53A7E6AC0FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB0C6D7-AD65-4301-B44F-E38510A8562F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB0C6D7-AD65-4301-B44F-E38510A8562F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB0C6D7-AD65-4301-B44F-E38510A8562F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB0C6D7-AD65-4301-B44F-E38510A8562F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E226D208-B9B6-4ACC-9AD0-2C002A1E01F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E226D208-B9B6-4ACC-9AD0-2C002A1E01F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E226D208-B9B6-4ACC-9AD0-2C002A1E01F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E226D208-B9B6-4ACC-9AD0-2C002A1E01F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

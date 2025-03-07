@@ -1,0 +1,42 @@
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: src/ApiGateway/EShop.Gateway/Dockerfile
+    container_name: eshop-gateway
+    restart: unless-stopped
+    ports:
+      - "5000:80"
+    networks:
+      - eshop
+  # User Service
+  user.service:
+    image: eshop-user.service
+    restart: always
+    build:
+      context: .
+      dockerfile: src/Services\EShop.User.Api/Dockerfile
+    environment:
+        ConnectionStrings__ClientsDb: Host=user.db;Port=5432;Database=UserDb;Username=postgres;Password=postgres
+        ConnectionStrings__ClientsCache: user.cache:6379
+        ConnectionStrings__RabbitMq: amqp://guest:guest@rabbitmq:5672/
+#        RiskEvaluator__Url: http://risk.evaluator.service:5020
+    ports:
+      - "5010:80"
+    depends_on:
+      - user.db
+    networks:
+      - eshop
+  # Redis cache for User service
+  risk.evaluator.service:
+    image: risk.evaluator.service
+    restart: always
+    build:
+      context: .
+      dockerfile: src/Services/EShop.RiskEvaluator/Dockerfile
+    environment:
+      Feature__PremiumMembershipFailure: false
+    ports:
+      - "5020:80"
+    networks:
+      - eshop
