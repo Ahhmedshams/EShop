@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShop.RiskEvaluator", "src\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShop.Gateway", "src\ApiGateway\EShop.Gateway\EShop.Gateway.csproj", "{E226D208-B9B6-4ACC-9AD0-2C002A1E01F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShop.Shared", "src\BuildingBlocks\EShop.Shared\EShop.Shared.csproj", "{008B2D81-FF20-4A12-9637-E9FDCABC2576}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,7 @@ Global
 		{27E1CBE5-6D27-4C2B-BF3F-B53A7E6AC0FE} = {6CBC620B-D850-42AE-8AD2-FEF330A3AF63}
 		{BBB0C6D7-AD65-4301-B44F-E38510A8562F} = {6CBC620B-D850-42AE-8AD2-FEF330A3AF63}
 		{E226D208-B9B6-4ACC-9AD0-2C002A1E01F2} = {4244B8E5-9752-4CFD-85D3-45A799FE6625}
+		{008B2D81-FF20-4A12-9637-E9FDCABC2576} = {6DE94B98-A8C7-4580-B447-73D39D4FD96A}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{27E1CBE5-6D27-4C2B-BF3F-B53A7E6AC0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -48,5 +51,9 @@ Global
 		{E226D208-B9B6-4ACC-9AD0-2C002A1E01F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E226D208-B9B6-4ACC-9AD0-2C002A1E01F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E226D208-B9B6-4ACC-9AD0-2C002A1E01F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{008B2D81-FF20-4A12-9637-E9FDCABC2576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{008B2D81-FF20-4A12-9637-E9FDCABC2576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{008B2D81-FF20-4A12-9637-E9FDCABC2576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{008B2D81-FF20-4A12-9637-E9FDCABC2576}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
