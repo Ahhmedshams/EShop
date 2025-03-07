@@ -3,15 +3,16 @@ USER $APP_UID
 WORKDIR /app
 EXPOSE 80
 
-
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/Services/EShop.RiskEvaluator/EShop.RiskEvaluator.csproj", "./"]
-RUN dotnet restore "EShop.RiskEvaluator.csproj"
-COPY src/Services/EShop.RiskEvaluator/ .
-WORKDIR "/src"
-RUN dotnet build "EShop.RiskEvaluator.csproj" -c $BUILD_CONFIGURATION -o /app/build
+COPY ["src/BuildingBlocks/","BuildingBlocks/"]
+COPY ["src/Services/EShop.RiskEvaluator/*.csproj","Services/EShop.RiskEvaluator/"]
+WORKDIR /src/Services/EShop.RiskEvaluator
+RUN dotnet restore
+COPY ["src/Services/EShop.RiskEvaluator/","./"]
+
+RUN dotnet build -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release

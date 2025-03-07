@@ -7,12 +7,13 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/ApiGateway/EShop.Gateway/EShop.Gateway.csproj", "./"]
-RUN dotnet restore "EShop.Gateway.csproj"
-COPY src/ApiGateway/EShop.Gateway/ .
-WORKDIR "/src"
-RUN dotnet build "EShop.Gateway.csproj" -c $BUILD_CONFIGURATION -o /app/build
+COPY ["src/BuildingBlocks/","BuildingBlocks/"]
+COPY ["src/ApiGateway/EShop.Gateway/*.csproj","ApiGateway/EShop.Gateway/"]
+WORKDIR /src/ApiGateway/EShop.Gateway
+RUN dotnet restore
+COPY ["src/ApiGateway/EShop.Gateway/","./"]
 
+RUN dotnet build -c $BUILD_CONFIGURATION -o /app/build
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "EShop.Gateway.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false

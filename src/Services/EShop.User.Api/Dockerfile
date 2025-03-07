@@ -3,15 +3,16 @@ USER $APP_UID
 WORKDIR /app
 EXPOSE 80
 
-
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/Services/EShop.User.Api/EShop.User.Api.csproj", "./"]
-RUN dotnet restore "EShop.User.Api.csproj"
-COPY src/Services/EShop.User.Api .
-WORKDIR "/src"
-RUN dotnet build "EShop.User.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
+COPY ["src/BuildingBlocks/","BuildingBlocks/"]
+COPY ["src/Services/EShop.User.Api/*.csproj","Services/EShop.User.Api/"]
+WORKDIR /src/Services/EShop.User.Api
+RUN dotnet restore
+COPY ["src/Services/EShop.User.Api/","./"]
+
+RUN dotnet build -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release

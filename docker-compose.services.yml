@@ -20,7 +20,7 @@ services:
         ConnectionStrings__ClientsDb: Host=user.db;Port=5432;Database=UserDb;Username=postgres;Password=postgres
         ConnectionStrings__ClientsCache: user.cache:6379
         ConnectionStrings__RabbitMq: amqp://guest:guest@rabbitmq:5672/
-#        RiskEvaluator__Url: http://risk.evaluator.service:5020
+        RiskEvaluator__Url: http://risk.evaluator.service:5020
     ports:
       - "5010:80"
     depends_on:
