@@ -1,7 +1,7 @@
 services:
   gateway:
     build:
-      context: .
+      context:  ../
       dockerfile: src/ApiGateway/EShop.Gateway/Dockerfile
     container_name: eshop-gateway
     restart: unless-stopped
@@ -14,7 +14,7 @@ services:
     image: eshop-user.service
     restart: always
     build:
-      context: .
+      context: ../
       dockerfile: src/Services\EShop.User.Api/Dockerfile
     environment:
         ConnectionStrings__ClientsDb: Host=user.db;Port=5432;Database=UserDb;Username=postgres;Password=postgres
@@ -32,7 +32,7 @@ services:
     image: risk.evaluator.service
     restart: always
     build:
-      context: .
+      context: ../
       dockerfile: src/Services/EShop.RiskEvaluator/Dockerfile
     environment:
       Feature__PremiumMembershipFailure: false

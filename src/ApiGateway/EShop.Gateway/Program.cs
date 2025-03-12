@@ -13,8 +13,6 @@ builder.Services.AddReverseProxy()
             var correlationId = Guid.NewGuid().ToString("N");
             transforms.ProxyRequest.Headers.SetCorrelationId(correlationId);
         });
-        
-     
     });
 
 
